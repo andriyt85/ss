@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular.module('myApp')
-        .controller('loginCtrl',['$http', function ($http) {
+        .controller('loginCtrl',['$http', 'myAppConst', function ($http, myAppConst) {
             var vm = this;
             vm.user = {
                 username: "",
@@ -16,7 +16,7 @@
                     headers : {'Content-Type': 'application/json'}
                 })
                     .success(function (data,status,headers,config) {
-                        console.log('success' + data);
+                        console.log(data);
                     })
                     .error(function (data,status,headers,config) {
                         console.log('error');
